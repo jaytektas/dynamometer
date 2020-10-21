@@ -1,0 +1,16 @@
+#include "gaugelcd.h"
+
+namespace Dynamometer
+{
+DGaugeLCD::DGaugeLCD(QWidget *parent)
+{
+    g_lcdNumber.setGeometry(geometry());
+}
+
+DGaugeLCD::~DGaugeLCD()
+{
+}
+
+
+
+}

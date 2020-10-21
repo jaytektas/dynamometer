@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>dials/black.png</file>
+    </qresource>
+</RCC>

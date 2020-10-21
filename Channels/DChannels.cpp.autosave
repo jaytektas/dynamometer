@@ -1,0 +1,50 @@
+#include "DChannels.h"
+#include "expressions/parser.h"
+
+DStatus *DChannels::c_status;
+vector<DChannels> DChannels::channels;
+
+DChannels::DChannels()
+{
+
+}
+
+bool DChannels::exist(QByteArray name)
+{
+    return (indexFromName(name) != -1);
+}
+
+bool Variablelist::add(QByteArray name, channelTypes channelType, QByteArray expression, qreal value)
+{
+    if (add(name, channelType, expression))
+    {
+        setValue(name, value);
+        return true;
+    }
+    return false;
+}
+
+bool Variablelist::add(QByteArray name, channelTypes channelType, QByteArray expression, dataTypes dataType, uint16_t offset)
+{
+    VAR new_var;
+
+    int id = indexFromName(name);
+    if (id == -1)
+    {
+        // variable does not yet exist
+        new_var.name = name;
+        new_var.expression = expression;
+        new_var.channelType = channelType;
+        new_var.dataType = dataType;
+        new_var.offset = offset;
+        new_var.value = 0;
+        var.push_back(new_var);
+    }
+    else
+    {
+        // variable already exists. overwrite it
+        var[static_cast<ulong>(id)] = new_var;
+    }
+    return true;
+}
+

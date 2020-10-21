@@ -1,0 +1,41 @@
+#include "dstatus.h"
+#include <QEventLoop>
+
+DStatus::DStatus(DCommunications *comms)
+{
+        s_comms = comms;
+}
+
+void DStatus::setEnabled(bool enabled)
+{
+    if (enabled)
+    {
+        if (!s_timeout) s_timeout = new QTimer(this);
+        QObject::connect(s_timeout, SIGNAL(timeout()), this, SLOT(update()));
+        s_timeout->start(s_updateRateMS);
+        s_enabled = true;
+    }
+    else
+    {
+        QObject::disconnect(s_timeout, SIGNAL(timeout()), this, SLOT(update()));
+        s_timeout->stop();
+        s_enabled = false;
+    }
+}
+
+void DStatus::update()
+{
+uint32_t timeStamp;
+QByteArray status;
+    status = s_comms->transmit('?', nullptr);
+    s_status = stat;
+    s_timeStamp = timeStamp;
+    emit updated(s_status);
+}
+
+void DStatus::setUpdateRateMS(int updateRateMS)
+{
+    if (s_enabled)
+        s_timeout->start(updateRateMS);
+}
+

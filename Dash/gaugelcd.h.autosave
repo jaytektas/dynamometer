@@ -1,0 +1,27 @@
+#ifndef GAUGELCD_H
+#define GAUGELCD_H
+
+#include "gauge.h"
+
+#include <QLCDNumber>
+
+using namespace std;
+
+namespace Dynamometer
+{
+
+class DGaugeLCD : public DGauge
+{
+public:
+    DGaugeLCD(QWidget *parent);
+    ~DGaugeLCD() override;
+    
+    virtual QByteArray type() const override { return "dial"; }
+
+protected:
+    QLCDNumber g_lcdNumber;
+
+};
+}
+
+#endif // GAUGELCD_H

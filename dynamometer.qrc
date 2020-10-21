@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/connect.png</file>
+        <file>icons/disconnect.png</file>
+        <file>icons/calculator_edit.png</file>
+        <file>icons/chart_curve.png</file>
+        <file>icons/channels.png</file>
+        <file>icons/session.png</file>
+        <file>icons/dash.png</file>
+        <file>icons/config.png</file>
+        <file>icons/cancel.png</file>
+        <file>icons/add.png</file>
+        <file>icons/chart_curve_add.png</file>
+        <file>icons/chart_curve_delete.png</file>
+        <file>icons/chart_line_add.png</file>
+        <file>icons/chart_line_delete.png</file>
+        <file>icons/chart_organisation_add.png</file>
+        <file>icons/chart_organisation_delete.png</file>
+        <file>icons/cog_add.png</file>
+        <file>icons/cog_delete.png</file>
+        <file>icons/delete.png</file>
+        <file>icons/error.png</file>
+        <file>icons/error_add.png</file>
+        <file>icons/error_delete.png</file>
+        <file>icons/page_white_acrobat.png</file>
+        <file>icons/resultset_first.png</file>
+        <file>icons/resultset_last.png</file>
+        <file>icons/resultset_next.png</file>
+        <file>icons/resultset_previous.png</file>
+        <file>icons/cross.png</file>
+        <file>icons/play-24.png</file>
+        <file>icons/stop.png</file>
+        <file>icons/stop-24.png</file>
+    </qresource>
+</RCC>
